@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, Pressable } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function App() {
 
@@ -120,7 +121,7 @@ export default function App() {
     return (
       <View style={styles.container}>
         <StatusBar style="auto" />
-        <Text style={styles.titulo}>Jogo da Velha</Text>
+        <Text style={styles.titulo}>#️⃣ Jogo da Velha #️⃣</Text>
 
         {/* Criando o tabuleiro do jogo*/}
         {
@@ -145,8 +146,12 @@ export default function App() {
           })
         }
 
-        <TouchableOpacity style={styles.btnMenu} onPress={() => setTela('menu')}>
+        {/* <TouchableOpacity style={styles.btnMenu} onPress={() => setTela('menu')}>
           <Text style={styles.textoBtnMenu}>Voltar ao Menu</Text>
+        </TouchableOpacity> */}
+
+        <TouchableOpacity style={styles.btnMenu} onPress={() => setTela('menu')}>
+          <MaterialCommunityIcons name="restart" size={50} color="black" />
         </TouchableOpacity>
 
       </View>
@@ -172,9 +177,14 @@ export default function App() {
           </View>
         }
 
-        <TouchableOpacity style={styles.btnMenu} onPress={() => setTela('menu')}>
+        {/* <TouchableOpacity style={styles.btnMenu} onPress={() => setTela('menu')}>
           <Text style={styles.textoBtnMenu}>Voltar ao Menu</Text>
+        </TouchableOpacity> */}
+        
+        <TouchableOpacity style={styles.btnMenu} onPress={() => setTela('menu')}>
+          <MaterialCommunityIcons name="restart" size={50} color="black" />
         </TouchableOpacity>
+
       </View>
 
 
@@ -193,11 +203,12 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     color: '#333',
+    marginBottom: 10
   },
   subtitulo: {
     fontSize: 20,
     color: '#555',
-    marginTop: 20,
+    // marginTop: 20,
   },
   boxJogador: {
     width: 80,
